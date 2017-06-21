@@ -21,18 +21,10 @@
         eat(): boolean;
     }
 
-    //interface describing what the passenger array should look like
-    interface IPassengerArray {
-        [index:number]:Traveler
-    }
-
-    // food(wagon)
-    // Return the total amount of food among all occupants of the wagon.
-
     //interface describing attributes and methods a wagon should have
     interface IWagon{
         capacity: number;
-        passengerArray: IPassengerArray;
+        passengerArray;
 
         // when implemented, we should add the traveler to the wagon if the capacity permits
         // this function should return the string "added" on success and "sorry" on failure
@@ -55,9 +47,9 @@
     //This is currently in violation of its contract with the interface. 
     //Create the code required to satisfy the contract with the interface
     class Traveler implements ITraveler {
-        food: number;
-        name: string;
-        isHealthy: boolean;
+        food;
+        name;
+        isHealthy;
 
         constructor(food:number, name:string, isHealthy: boolean){
             this.food = food;
@@ -67,20 +59,19 @@
 
         hunt(){
             if (getRandomNumber(1,10) > 5) {
-                // console.log('\n\r Successful Hunt \n');
                 this.food = this.food + 100;
-            } else {
-                // console.log('\n\r Failed Hunt \n');
-            }
+            } 
             return this.food;
         }
 
         eat() {
             if (this.food >= 20) {
                 this.food = this.food - 20;
-                return this.isHealthy = true;
+                this.isHealthy = true;
+                return this.isHealthy;
             } else {
-                return this.isHealthy = false;
+                this.isHealthy = false;
+                return this.isHealthy;
             }
         }
 
@@ -90,8 +81,9 @@
     //This is currently in violation of its contract with the interface.
     //Create the code required to satisfy the contract with the interface 
     class Wagon implements IWagon {
-        capacity: number;
+        capacity;
         passengerArray = [];
+        //passengerArray : Traveler[];
 
         constructor(capacity: number){
             this.capacity = capacity;
@@ -99,7 +91,7 @@
 
         // when implemented, we should add the traveler to the wagon if the capacity permits
         // this function should return the string "added" on success and "sorry" on failure
-        addPassenger(traveler: Traveler){
+        addPassenger(traveler){
             let result;
 
             // console.log(this.passengerArray.length);
