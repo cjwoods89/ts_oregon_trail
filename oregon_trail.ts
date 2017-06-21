@@ -198,42 +198,16 @@
     }
 
     // Let two travelers hunt!
-    // traveler4.hunt();
-    // traveler5.hunt();
-
     for (var i = 3; i < 5; i++) {
-        console.log(`${travelerArray[i].name} started with ${travelerArray[i].food} and is now hunting. New food total: ${travelerArray[i].hunt()}`);
+        console.log(`${travelerArray[i].name} started with ${travelerArray[i].food} total food and is now hunting. New food total: ${travelerArray[i].hunt()}`);
     }
-
-
-    // // Let three travelers eat!
-    // traveler1.eat();
-
-    // if (!traveler1.isHealthy) {
-    //     console.log(`${traveler1.name} got sick`);
-    // }
-
-    // traveler2.eat();
-
-    // if (!traveler2.isHealthy) {
-    //     console.log(`${traveler2.name} got sick`);
-    // }
-
-    // traveler3.eat();
-
-    // if (!traveler3.isHealthy) {
-    //     console.log(`${traveler3.name} got sick`);
-    // }
-
-    // // Let two travelers hunt!
-    // traveler4.hunt();
-    // traveler5.hunt();
 
     // Check the health status of the wagon
     if (!wagon1.isQuarantined()){
         console.log('Your wagon is quarantined!');  
     };
     
+    // Show total food!
     console.log(`The total food for the wagon is: ${wagon1.getFood()}!`);
 
 })();
