@@ -16,21 +16,19 @@
         }
         Traveler.prototype.hunt = function () {
             if (getRandomNumber(1, 10) > 5) {
-                // console.log('\n\r Successful Hunt \n');
                 this.food = this.food + 100;
-            }
-            else {
-                // console.log('\n\r Failed Hunt \n');
             }
             return this.food;
         };
         Traveler.prototype.eat = function () {
             if (this.food >= 20) {
                 this.food = this.food - 20;
-                return this.isHealthy = true;
+                this.isHealthy = true;
+                return this.isHealthy;
             }
             else {
-                return this.isHealthy = false;
+                this.isHealthy = false;
+                return this.isHealthy;
             }
         };
         return Traveler;
@@ -39,6 +37,7 @@
     //This is currently in violation of its contract with the interface.
     //Create the code required to satisfy the contract with the interface 
     var Wagon = (function () {
+        //passengerArray : Traveler[];
         function Wagon(capacity) {
             this.passengerArray = [];
             this.capacity = capacity;
@@ -57,6 +56,7 @@
                     return "Not added to the wagon!";
                 }
             }
+            return "Maximum capacity reached!";
         };
         Wagon.prototype.isQuarantined = function () {
             for (var i = 0; i < this.passengerArray.length; i++) {
@@ -120,31 +120,14 @@
         console.log(travelerArray[i].name + " is eating. Are they still healthy? " + travelerArray[i].eat());
     }
     // Let two travelers hunt!
-    // traveler4.hunt();
-    // traveler5.hunt();
     for (var i = 3; i < 5; i++) {
-        console.log(travelerArray[i].name + " started with " + travelerArray[i].food + " and is now hunting. New food total: " + travelerArray[i].hunt());
+        console.log(travelerArray[i].name + " started with " + travelerArray[i].food + " total food and is now hunting. New food total: " + travelerArray[i].hunt());
     }
-    // // Let three travelers eat!
-    // traveler1.eat();
-    // if (!traveler1.isHealthy) {
-    //     console.log(`${traveler1.name} got sick`);
-    // }
-    // traveler2.eat();
-    // if (!traveler2.isHealthy) {
-    //     console.log(`${traveler2.name} got sick`);
-    // }
-    // traveler3.eat();
-    // if (!traveler3.isHealthy) {
-    //     console.log(`${traveler3.name} got sick`);
-    // }
-    // // Let two travelers hunt!
-    // traveler4.hunt();
-    // traveler5.hunt();
     // Check the health status of the wagon
     if (!wagon1.isQuarantined()) {
         console.log('Your wagon is quarantined!');
     }
     ;
+    // Show total food!
     console.log("The total food for the wagon is: " + wagon1.getFood() + "!");
 })();

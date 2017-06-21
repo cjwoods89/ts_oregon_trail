@@ -51,7 +51,7 @@
         name;
         isHealthy;
 
-        constructor(food, name, isHealthy){
+        constructor(food: number, name: string, isHealthy: boolean){
             this.food = food;
             this.name = name;
             this.isHealthy = isHealthy;
@@ -85,7 +85,7 @@
         passengerArray = [];
         //passengerArray : Traveler[];
 
-        constructor(capacity){
+        constructor(capacity: number){
             this.capacity = capacity;
         }
 
