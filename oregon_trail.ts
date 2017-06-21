@@ -19,8 +19,6 @@
         //If they don't have 20 food then we should change isHealthy to false
         //return the travelers health after attempting to eat
         eat(): boolean;
-
-
     }
 
     //interface describing what the passenger array should look like
@@ -119,6 +117,8 @@
 
                 }
             }
+
+            return "Maximum capacity reached!"
         }
 
         isQuarantined() {
@@ -211,4 +211,3 @@
     console.log(`The total food for the wagon is: ${wagon1.getFood()}!`);
 
 })();
-
