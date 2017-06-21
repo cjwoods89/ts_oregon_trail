@@ -37,8 +37,8 @@
     //This is currently in violation of its contract with the interface.
     //Create the code required to satisfy the contract with the interface 
     var Wagon = (function () {
-        //passengerArray : Traveler[];
         function Wagon(capacity) {
+            //passengerArray = [];
             this.passengerArray = [];
             this.capacity = capacity;
         }

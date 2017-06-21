@@ -82,8 +82,8 @@
     //Create the code required to satisfy the contract with the interface 
     class Wagon implements IWagon {
         capacity;
-        passengerArray = [];
-        //passengerArray : Traveler[];
+        //passengerArray = [];
+        passengerArray : Traveler[] = [];
 
         constructor(capacity: number){
             this.capacity = capacity;
